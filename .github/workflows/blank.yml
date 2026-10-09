@@ -6,14 +6,14 @@ class Program
     {
         Console.WriteLine("Let's divide two numbers!");
         
-        // Prompting the user naturally
+        
         Console.Write("Enter the first number: ");
         string input1 = Console.ReadLine();
 
         Console.Write("Enter the number to divide by: ");
         string input2 = Console.ReadLine();
 
-        // Call the method to handle conversion and division
+        
         PerformDivision(input1, input2);
         
         Console.WriteLine("\nThanks for using the program!");
@@ -23,14 +23,14 @@ class Program
     {
         try
         {
-            // Convert strings to integers
+            
             int num1 = Convert.ToInt32(strNum1);
             int num2 = Convert.ToInt32(strNum2);
 
-            // Perform division
+            
             int result = num1 / num2;
 
-            // Print the result if everything went well
+            
             Console.WriteLine($"\nSuccess! {num1} divided by {num2} is {result}.");
         }
         catch (FormatException)
