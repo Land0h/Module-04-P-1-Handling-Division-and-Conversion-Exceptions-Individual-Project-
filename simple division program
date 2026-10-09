@@ -1,0 +1,53 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Use me to divide two numbers");
+        
+        // asking the user to enter the numbers
+        Console.Write("first number: ");
+        string input1 = Console.ReadLine();
+
+        Console.Write("second number: ");
+        string input2 = Console.ReadLine();
+
+        
+        PerformDivision(input1, input2);
+        
+        Console.WriteLine("\nThanks for using the program!");
+    }
+
+    static void PerformDivision(string strNum1, string strNum2)
+    {
+        try
+        {
+            // make their input into intergers to be divided
+            int num1 = Convert.ToInt32(strNum1);
+            int num2 = Convert.ToInt32(strNum2);
+
+            // divison
+            int result = num1 / num2;
+
+            // print the resuly
+            Console.WriteLine($"\nSuccess! {num1} divided by {num2} is {result}.");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("\nOops! Please enter valid whole numbers only (no letters or symbols).");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("\nOops! You can't divide a number by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("\nOops! That number is way too big (or too small) for me to handle.");
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("\nOops! Something unexpected went wrong.");
+        }
+    }
+}
